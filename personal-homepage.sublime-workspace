@@ -1,0 +1,244 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"p",
+				"pipe"
+			],
+			[
+				"sour",
+				"sourcemaps〔variable〕"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"sou",
+				"sourcemaps〔variable〕"
+			],
+			[
+				"array_",
+				"array_diff"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 167.0,
+		"last_filter": "js",
+		"selected_items":
+		[
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syntax jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Dev Environment/Default/projects/personal-homepage"
+	],
+	"file_history":
+	[
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Templates/Gulp Workflow/gulpfile.js",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Templates/Gulp Workflow/resources/assets/vendor/js/vendortest.js",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Dev Environment/Default/projects/Laravel-Gulp-Template/public/.htaccess",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Front-end frameworks/Bootstrap/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/_grid.scss",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Front-end frameworks/Bootstrap/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/_variables.scss",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Front-end frameworks/Bootstrap/bootstrap-sass-3.3.5/assets/stylesheets/_bootstrap.scss",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Front-end frameworks/Bootstrap/bootstrap-sass-3.3.5/assets/stylesheets/bootstrap/_alerts.scss",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Gulp-Template/package.json",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Vagrant/Default/projects/Laravel-Gulp-Template/resources/assets/scss/test.scss",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Vagrant/Default/projects/Laravel-Gulp-Template/gulpfile.js",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Vagrant/Default/projects/Laravel-Gulp-Template/src/js/test.js",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Vagrant/Default/projects/Laravel-Gulp-Template/resources/assets/js/test.js",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Vagrant/Default/projects/personal-homepage/package.json",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Gulp-Setup/gulpfile.js",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Gulp-Setup/source/scss/test.scss",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Gulp-Setup/source/javascript/test.js",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Vagrant/Default/projects/Test/.htaccess",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Vagrant/Default/projects/.htaccess",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Vagrant/Default/projects/.httpd",
+		"/Users/maximilianschwarzmuller/Projects/Web Development/Gulp-Setup/package.json",
+		"/Users/maximilianschwarzmuller/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"test",
+			"comment"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "personal-homepage.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
