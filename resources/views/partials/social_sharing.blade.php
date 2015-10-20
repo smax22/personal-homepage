@@ -1,0 +1,1 @@
+<div class="social-sharing">Here will be Facebook, Twitter etc. sharing options</div>

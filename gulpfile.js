@@ -8,7 +8,8 @@ var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
-	gzip = require('gulp-gzip');;
+	gzip = require('gulp-gzip'),
+	imagemin = require('gulp-imagemin');
 
 gulp.task('default', ['watch']);
 
@@ -46,7 +47,16 @@ gulp.task('build-css', function() {
 		.pipe(gulp.dest(output + '/css'));
 });
 
+gulp.task('imageopt', function() {
+	return gulp.src(input + 'images/**/*')
+		.pipe(imagemin({
+			progressive: true
+		}))
+		.pipe(gulp.dest(output + 'images'));
+});
+
 gulp.task('watch', function() {
 	gulp.watch(input + 'js/**/*.js', ['jshint', 'build-js']);
 	gulp.watch(input + 'scss/**/*.scss', ['build-css']);
+	gulp.watch(input + 'images/**/*', ['imageopt']);
 });

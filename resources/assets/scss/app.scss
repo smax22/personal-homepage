@@ -1,0 +1,127 @@
+@import 'mixins/media-queries';
+
+$primaryColor: #EBC7C7;
+$secondaryColor: #AF2121;
+$gray: #9e9c9c;
+$lightGray: #f4f4f4;
+
+header {
+	text-align: center;
+	padding: 0.5em;
+
+	.logo {
+		display: inline-block;
+		float: left;
+		width: 33%;
+		text-align: left;
+		padding: 0.5em;
+		color: $gray;
+		font-size: 1.2em;
+		@include phone {
+			float: none;
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	nav {
+		width: 66%;
+		display: inline-block;
+		text-align: right;
+		padding: 0.5em;
+
+		@include phone {
+			width: 100%;
+			text-align: center;
+			white-space: nowrap;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			-webkit-overflow-scroll: touch;
+		}
+
+		a.active {
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		a:visited {
+			color: $secondaryColor;
+			text-decoration: none;
+		}
+
+		a:link {
+			color: $secondaryColor;
+			text-decoration: none;
+			width: 120px;
+			display: inline-block;
+			text-align: center;
+		}
+
+		a:hover, a:active {
+			color: $secondaryColor;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		span {
+			font-size: 1.2em;
+		}
+	}
+}
+
+#main-img {
+	max-height: 360px;
+	margin: auto;
+}
+
+.main-image {
+	width: 100%;
+	padding: 64px 0px;
+	background-color: $lightGray;
+
+	@include phone {
+		padding: 32px 0px;
+	}
+}
+
+
+.blog-post {
+	font-family: "Georgia, serif";
+	text-align: center;
+
+	h1 {
+		font-size: 2.4em;
+		font-weight: bold;
+	}
+
+	h6 {
+		font-style: italic;
+		font-size: 1.1em;
+	}
+
+	.body {
+		font-size: 1.2em;
+		text-align: left;
+	}
+
+	.divider {
+		background-color: $gray;
+		height: 1px;
+		width: 280px;
+	}
+}
+
+.blog-posts {
+
+	.social-sharing {
+		font-family: "Georgia, serif";
+		font-size: 3/4em;
+		text-align: center;
+	}
+
+	.divider {
+		height: 2px;
+		background-color: $gray;
+	}
+}
+
