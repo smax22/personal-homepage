@@ -1,20 +1,20 @@
 @import 'mixins/media-queries';
 
-$primaryColor: #EBC7C7;
+$primaryColor: #CE7373;
 $secondaryColor: #AF2121;
 $gray: #9e9c9c;
 $lightGray: #f4f4f4;
 
 header {
 	text-align: center;
-	padding: 0.5em;
+	padding: 0.5em 0;
 
 	.logo {
 		display: inline-block;
 		float: left;
-		width: 33%;
+		width: 25%;
 		text-align: left;
-		padding: 0.5em;
+		padding: 0.5em 0;
 		color: $gray;
 		font-size: 1.2em;
 		@include phone {
@@ -25,10 +25,19 @@ header {
 	}
 
 	nav {
-		width: 66%;
+		width: 75%;
 		display: inline-block;
 		text-align: right;
-		padding: 0.5em;
+		padding: 0.5em 0;
+
+		@include tablet {
+			width: 100%;
+			text-align: center;
+			white-space: nowrap;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			-webkit-overflow-scroll: touch;
+		}
 
 		@include phone {
 			width: 100%;
@@ -45,26 +54,26 @@ header {
 		}
 
 		a:visited {
-			color: $secondaryColor;
+			color: $primaryColor;
 			text-decoration: none;
 		}
 
 		a:link {
-			color: $secondaryColor;
+			color: $primaryColor;
 			text-decoration: none;
-			width: 120px;
 			display: inline-block;
-			text-align: center;
+			text-align: right;
 		}
 
 		a:hover, a:active {
 			color: $secondaryColor;
 			text-decoration: none;
-			font-weight: bold;
 		}
 
 		span {
 			font-size: 1.2em;
+			padding: 0;
+			margin-left: 16px;
 		}
 	}
 }
@@ -123,5 +132,30 @@ header {
 		height: 2px;
 		background-color: $gray;
 	}
+}
+
+.admin-dashboard {
+	section {
+		background-color: $lightGray;
+		padding: 8px;
+		border: 1px solid $gray;
+		margin-bottom: 16px;
+	}
+
+	h1 {
+		font-size: 1em;
+		font-weight: bold;
+		margin: 0;
+		margin-bottom: 8px;
+	}
+}
+
+#admin-login {
+	width: 33%;
+	margin: auto;
+}
+
+#post-title, #post-author {
+	width: 33%;
 }
 
