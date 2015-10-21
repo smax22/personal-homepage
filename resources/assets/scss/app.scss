@@ -5,6 +5,16 @@ $secondaryColor: #AF2121;
 $gray: #9e9c9c;
 $lightGray: #f4f4f4;
 
+a:link, a:visited, a:active {
+	color: $primaryColor;
+	text-decoration: none;
+}
+
+a:hover {
+	color: $secondaryColor;
+	text-decoration: none;
+}
+
 header {
 	text-align: center;
 	padding: 0.5em 0;
@@ -48,16 +58,6 @@ header {
 			-webkit-overflow-scroll: touch;
 		}
 
-		a.active {
-			font-weight: bold;
-			text-decoration: none;
-		}
-
-		a:visited {
-			color: $primaryColor;
-			text-decoration: none;
-		}
-
 		a:link {
 			color: $primaryColor;
 			text-decoration: none;
@@ -65,7 +65,7 @@ header {
 			text-align: right;
 		}
 
-		a:hover, a:active {
+		a:hover {
 			color: $secondaryColor;
 			text-decoration: none;
 		}
@@ -74,6 +74,12 @@ header {
 			font-size: 1.2em;
 			padding: 0;
 			margin-left: 16px;
+		}
+
+		.active {
+			a {
+				color: $secondaryColor;
+			}
 		}
 	}
 }
@@ -134,6 +140,10 @@ header {
 	}
 }
 
+#admin-login {
+	width: 33%;
+}
+
 .admin-dashboard {
 	section {
 		background-color: $lightGray;
@@ -148,14 +158,31 @@ header {
 		margin: 0;
 		margin-bottom: 8px;
 	}
+
+	form {
+		display: inline-block;
+	}
 }
 
-#admin-login {
-	width: 33%;
-	margin: auto;
+#new-post {
+	margin: 16px 0;
 }
 
-#post-title, #post-author {
-	width: 33%;
+.admin-post {
+	h3 {
+		display: inline;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	#published {
+		color: green;
+	}
+
+	#unpublished {
+		color: red;
+	}
 }
 

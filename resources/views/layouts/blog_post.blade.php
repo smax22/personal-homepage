@@ -1,6 +1,6 @@
 <article class="blog-post">
-	<h1>Blog Post Title</h1>
-	<h6 class="info">Blog Post Author and Date</h6>
+	<h1>{{ $post->title }}</h1>
+	<h6 class="info">{{ $post->author }}, {{ $post->created_at }}</h6>
 	<hr class="divider">
-	<p class="body">Blog Post Content</p>
+	<div class="body">{!! $post->body !!}</div>
 </article>

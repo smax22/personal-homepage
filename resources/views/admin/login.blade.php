@@ -1,4 +1,4 @@
-@extends('layouts.master_admin')
+@extends('layouts.master')
 @section('content')
 	<form id="admin-login" method="post" action="{{ route('admin.login') }}">
 		<div class="form-group{{ $errors->has('admin-name') ? ' has-error' : '' }}">

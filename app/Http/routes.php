@@ -12,10 +12,8 @@
 */
 
 Route::get('/', [
-	'as' => 'home', 
-	function () {
-    	return view('home');
-	}
+	'uses' => 'PostController@getSnippets',
+	'as' => 'home'
 ]);
 
 
@@ -62,3 +60,34 @@ Route::post('/post/create', [
 	'as' => 'post.create',
 	'middleware' => 'auth'
 ]);
+
+Route::get('/post/edit/{postId}', [
+	'uses' => 'PostController@getEdit',
+	'as' => 'post.edit',
+	'middleware' => 'auth'
+]);
+
+Route::post('/post/edit', [
+	'uses' => 'PostController@postEdit',
+	'as' => 'post.update',
+	'middleware' => 'auth'
+]);
+
+Route::get('/post/delete/{postId}', [
+	'uses' => 'PostController@getDelete',
+	'as' => 'post.delete',
+	'middleware' => 'auth'
+]);
+
+Route::get('/post/showAll', [
+	'uses' => 'PostController@getShowAll',
+	'as' => 'post.showAll',
+	'middleware' => 'auth'
+]);
+
+Route::get('/post/publish/{postId}/{publishState}', [
+	'uses' => 'PostController@getPublish',
+	'as' => 'post.publish',
+	'middleware' => 'auth'
+]);
+
