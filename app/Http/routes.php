@@ -91,3 +91,116 @@ Route::get('/post/publish/{postId}/{publishState}', [
 	'middleware' => 'auth'
 ]);
 
+Route::get('/post/show/{postId}/{postURL}', [
+	'uses' => 'PostController@getShow',
+	'as' => 'post.show'
+]);
+
+/*
+	Products
+*/
+
+Route::get('/product/index', [
+	'uses' => 'ProductController@getIndex',
+	'as' => 'product.index'
+]);
+
+Route::get('/product/create', [
+	'uses' => 'ProductController@getCreate',
+	'as' => 'product.create',
+	'middleware' => 'auth'
+]);
+
+Route::post('/product/create', [
+	'uses' => 'ProductController@postCreate',
+	'as' => 'product.create',
+	'middleware' => 'auth'
+]);
+
+Route::get('/product/showAll', [
+	'uses' => 'ProductController@getShowAll',
+	'as' => 'product.showAll',
+	'middleware' => 'auth'
+]);
+
+Route::get('/product/edit/{productId}', [
+	'uses' => 'ProductController@getEdit',
+	'as' => 'product.edit',
+	'middleware' => 'auth'
+]);
+
+Route::get('/product/delete/{productId}', [
+	'uses' => 'ProductController@getDelete',
+	'as' => 'product.delete',
+	'middleware' => 'auth'
+]);
+
+Route::post('/product/edit/', [
+	'uses' => 'ProductController@postEdit',
+	'as' => 'product.update',
+	'middleware' => 'auth'
+]);
+
+/*
+	References
+*/
+
+Route::get('/reference/index', [
+	'uses' => 'ReferenceController@getIndex',
+	'as' => 'reference.index'
+]);
+
+Route::get('/reference/create', [
+	'uses' => 'ReferenceController@getCreate',
+	'as' => 'reference.create',
+	'middleware' => 'auth'
+]);
+
+Route::post('/reference/create', [
+	'uses' => 'ReferenceController@postCreate',
+	'as' => 'reference.create',
+	'middleware' => 'auth'
+]);
+
+Route::get('/reference/showAll', [
+	'uses' => 'ReferenceController@getShowAll',
+	'as' => 'reference.showAll',
+	'middleware' => 'auth'
+]);
+
+Route::get('/reference/edit/{referenceId}', [
+	'uses' => 'ReferenceController@getEdit',
+	'as' => 'reference.edit',
+	'middleware' => 'auth'
+]);
+
+Route::get('/reference/delete/{referenceId}', [
+	'uses' => 'ReferenceController@getDelete',
+	'as' => 'reference.delete',
+	'middleware' => 'auth'
+]);
+
+Route::post('/reference/edit/', [
+	'uses' => 'ReferenceController@postEdit',
+	'as' => 'reference.update',
+	'middleware' => 'auth'
+]);
+
+/*
+	Comments
+*/
+
+Route::post('/post/comment/create', [
+	'uses' => 'CommentController@postCreate',
+	'as' => 'comment.create',
+]);
+
+/*
+	Contact
+*/
+
+Route::get('/contact', [
+	'uses' => 'ContactController@getIndex',
+	'as' => 'contact.index'
+]);
+

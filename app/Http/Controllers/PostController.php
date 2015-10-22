@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Post;
+use Jenssegers\Date\Date;
 
 class PostController extends Controller {
 	const NUMBER_OF_SNIPPETS = 6;
@@ -44,17 +45,23 @@ class PostController extends Controller {
 		$posts = Post::orderBy('created_at', 'desc')->take(self::NUMBER_OF_SNIPPETS)->get();
 		foreach ($posts as $post) {
 			$post->body = self::shorten_string($post->body, 40);
+			Date::setLocale('de');
+			$dt = new Date("" . $post->created_at . "");
+			$dt = $dt->format('j F Y');
+			$post->loc_date = $dt;
+			$post->url = implode("-", explode(" ",$post->title));
 		}
 		return view('blog/index', ['posts' => $posts]);
 	}
 
-	public function getShow($postId) {
+	public function getShow($postId, $postURL) {
 		if (!isset($postId)) {
 			return redirect()->route('home');
 		}
 		$post = Post::where('id', $postId)->first();
+		$comments = $post->comments;
 
-		return view('post.show', ['post' => $post]);
+		return view('post/show', ['post' => $post, 'comments' => $comments]);
 	}
 
 	public function getEdit($postId) {
@@ -68,15 +75,20 @@ class PostController extends Controller {
 
 	public function postEdit(Request $request) {
 		if (!isset($request['id'])) {
-			return redirect()->route('home');
+			return redirect()->back();
 		}
+		$this->validate($request, [
+			'title' => 'required|max:120',
+			'author' => 'required|max:120',
+			'content' => 'required|'
+		]);
 		$id = $request['id'];
 		$post = Post::where('id', $id)->first();
 		$post->title = $request['title'];
 		$post->author = $request['author'];
 		$post->body = $request['content'];
 		$post->update();
-		return redirect()->back();
+		return redirect()->route('admin.index');
 	}
 
 	public function getDelete($postId) {

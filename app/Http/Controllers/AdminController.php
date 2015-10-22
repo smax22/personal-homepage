@@ -5,6 +5,8 @@ use Auth;
 use App\Admin;
 use App\Login;
 use App\Post;
+use App\Product;
+use App\Reference;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -14,7 +16,13 @@ class AdminController extends Controller {
 		$posts = Post::orderBy('created_at', 'desc')
 			->take(5)
 			->get();
-		return view('admin/index', ['posts' => $posts]);
+		$products = Product::orderBy('created_at', 'desc')
+			->take(5)
+			->get();
+		$references = Reference::orderBy('created_at', 'desc')
+			->take(5)
+			->get();
+		return view('admin/index', ['posts' => $posts, 'products' => $products, 'references' => $references]);
 	}
 
 	public function getLogin() {

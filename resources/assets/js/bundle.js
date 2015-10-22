@@ -1,2 +1,0 @@
-var test = "test";
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJ0ZXN0LmpzIl0sInNvdXJjZXNDb250ZW50IjpbInZhciB0ZXN0ID0gXCJ0ZXN0XCI7Il0sImZpbGUiOiJ0ZXN0LmpzIiwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

@@ -1,0 +1,8 @@
+{
+	"globals": {
+		"$": false,
+		"document": false
+	},
+	"devel": true,
+	"globalstrict": true
+}

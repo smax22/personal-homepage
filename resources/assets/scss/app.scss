@@ -15,22 +15,41 @@ a:hover {
 	text-decoration: none;
 }
 
+h1 {
+	font-size: 3em;
+	font-family: "Georgia, serif";
+}
+
+h2 {
+	font-size: 2.5em;
+	font-family: "Georgia, serif";
+}
+
+h3 {
+	font-size: 2em;
+	font-family: "Georgia, serif";
+}
+
 header {
 	text-align: center;
 	padding: 0.5em 0;
+	line-height: 90px;
 
 	.logo {
-		display: inline-block;
 		float: left;
 		width: 25%;
-		text-align: left;
-		padding: 0.5em 0;
-		color: $gray;
-		font-size: 1.2em;
-		@include phone {
-			float: none;
+		// text-align: left;
+		// color: $secondaryColor;
+		// font-size: 1.2em;
+		// @include phone {
+		// 	float: none;
+		// 	width: 100%;
+		// 	text-align: center;
+		// }
+
+		img {
 			width: 100%;
-			text-align: center;
+			float: left;
 		}
 	}
 
@@ -99,10 +118,16 @@ header {
 	}
 }
 
+.blog-post:last-child .divider-large {
+	height: 0px;
+	margin: 8px 0;
+	background-color: #FFF;
+}
 
 .blog-post {
 	font-family: "Georgia, serif";
 	text-align: center;
+	margin-bottom: 16px;
 
 	h1 {
 		font-size: 2.4em;
@@ -117,31 +142,48 @@ header {
 	.body {
 		font-size: 1.2em;
 		text-align: left;
+		margin-bottom: 1em;
 	}
 
 	.divider {
-		background-color: $gray;
+		background-color: $lightGray;
 		height: 1px;
 		width: 280px;
 	}
-}
 
-.blog-posts {
-
-	.social-sharing {
-		font-family: "Georgia, serif";
-		font-size: 3/4em;
-		text-align: center;
-	}
-
-	.divider {
-		height: 2px;
+	.divider-large {
+		height: 1px;
+		margin: 8px 0;
 		background-color: $gray;
 	}
+
+	.social-sharing {
+		margin-bottom: 1em;
+	}
+}
+
+.comment {
+	padding: 1em;
+	border: 1px solid gray;
+	border-radius: 0.25em;
+	margin-bottom: 1.5em;
+
+	p:last-child {
+		font-size: 0.75em;
+		font-style: italic;
+	}
+}
+
+#toggle-compose-comment:hover {
+	color: $secondaryColor;
+	cursor: pointer;
 }
 
 #admin-login {
 	width: 33%;
+	@include phone {
+		width: 100%;
+	}
 }
 
 .admin-dashboard {
@@ -186,3 +228,18 @@ header {
 	}
 }
 
+.reference {
+	padding: 16px 0;
+}
+
+.reference:nth-of-type(odd) {
+	background-color: $lightGray;
+}
+
+.product {
+	padding: 16px 0;
+}
+
+.product:nth-of-type(odd) {
+	background-color: $lightGray;
+}

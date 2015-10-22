@@ -1,18 +1,24 @@
 @extends('layouts.master')
 
-@section('main-image')
-	<img class="img-responsive" src="src/images/upscope-main-logo.svg" id="main-img"></img>
-@endsection
 
 @section('content')
-	<section class="blog-posts">
+	<section class="blog-posts clearfix">
 		@foreach($posts as $post)
-			<!-- Only include snippets here -->
-			@include('layouts.blog_post')
-			<!-- ToDo: Include Social sharing options here -->
-			@include('partials.social_sharing')
-			<!-- Only include when multiple posts exist -->
-			<div class="divider"></div>
+			<article class="blog-post row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h1>{{ $post->title }}</h1>
+					<h6 class="info">{{ $post->author }}, {{ $post->loc_date }}</h6>
+					<hr class="divider">
+					<div class="body">
+						{!! $post->body !!}
+						<a href="{{ route('post.show', ['postId' => $post->id, 'postURL' => $post->url]) }}">{{ trans('text.read_more') }}</a>
+					</div>
+					<!-- ToDo: Include Social sharing options here -->
+					@include('partials.social_sharing')
+					<!-- Only include when multiple posts exist -->
+					<hr class="divider-large">
+				</div>
+			</article>
 		@endforeach
-	</section>
+    </section>
 @endsection

@@ -25,7 +25,6 @@ gulp.task('build-js', function() {
 		.pipe(sourcemaps.write())
 		.pipe(concat('bundle.js'))
 		.pipe(uglify())
-		.pipe(gzip())
 		.pipe(gulp.dest(output + 'js'));
 });
 
@@ -42,7 +41,10 @@ gulp.task('build-css', function() {
 		.pipe(sourcemaps.init())
 		.pipe(sass())
 		.pipe(sourcemaps.write())
-		.pipe(autoprefixer())
+		.pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
 		.pipe(concat('bundle.css'))
 		.pipe(gulp.dest(output + '/css'));
 });

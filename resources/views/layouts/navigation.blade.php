@@ -1,20 +1,24 @@
 <header>
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-            <div class="logo visible-lg">Maximilian Schwarzmüller Webservices</div> 
-            <div class="logo hidden-lg">M. Schwarzmüller Webservices</div> 
+            <div class="logo">
+                <div class="clearfix"></div>
+                <img src="src/images/upscope-main-logo.svg"></img>
+            </div>
+            {{-- <div class="logo visible-lg">Maximilian Schwarzmüller Webservices</div> 
+            <div class="logo hidden-lg">M. Schwarzmüller Webservices</div>  --}}
             <nav>
                 @if(!Auth::check())
-                    <span class="{{ Request::is('/') || Request::is('blog/*') ? 'active' : ''}}"><a href="{{ route('home') }}">Blog</a></span>
-                    <span class="{{ Request::is('product/*') ? 'active' : ''}}"><a href="#">Products</a></span>
-                    <span class="{{ Request::is('reference/*') ? 'active' : ''}}"><a href="#">Track Record</a></span>
-                    <span class="{{ Request::is('contact/*') ? 'active' : ''}}"><a href="#">Contact</a></span>
+                    <span class="{{ Request::is('/') || Request::is('blog/*')|| Request::is('post/*') ? 'active' : ''}}"><a href="{{ route('home') }}">{{ trans('text.blog') }}</a></span>
+                    <span class="{{ Request::is('product/*') ? 'active' : ''}}"><a href="{{ route('product.index') }}">{{ trans('text.products') }}</a></span>
+                    <span class="{{ Request::is('reference/*') ? 'active' : ''}}"><a href="{{ route('reference.index') }}">{{ trans('text.references') }}</a></span>
+                    <span class="{{ Request::is('contact') ? 'active' : ''}}"><a href="{{ route('contact.index') }}">{{ trans('text.contact') }}</a></span>
                 @else
                     <span class="{{ Request::is('admin/index') ? 'active' : ''}}"><a href="{{ route('admin.index') }}">Dashboard</a></span>
-                    <span><a href="{{ route('post.showAll') }}" class="{{ Request::is('post/*') ? 'active' : ''}}">Posts</a></span>
-                    <span><a href="#" class="{{ Request::is('product/*') ? 'active' : ''}}">Products</a></span>
-                    <span><a href="#" class="{{ Request::is('reference/*') ? 'active' : ''}}">References</a></span>
-                    <span><a href="#" class="{{ Request::is('config/*') ? 'active' : ''}}">Config</a></span>
+                    <span class="{{ Request::is('post/*') ? 'active' : ''}}"><a href="{{ route('post.showAll') }}">Posts</a></span>
+                    <span class="{{ Request::is('product/*') ? 'active' : ''}}"><a href="{{ route('product.showAll') }}">Products</a></span>
+                    <span class="{{ Request::is('reference/*') ? 'active' : ''}}"><a href="{{ route('reference.showAll') }}">References</a></span>
+                    <span class="{{ Request::is('config/*') ? 'active' : ''}}"><a href="#">Config</a></span>
                     <span><a href="{{ route('admin.logout') }}">Logout</a></span>
                 @endif
             </nav>
