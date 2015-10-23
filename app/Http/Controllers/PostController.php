@@ -69,6 +69,7 @@ class PostController extends Controller {
 			return redirect()->route('home');
 		}
 		$post = Post::where('id', $postId)->first();
+		$post->body = htmlspecialchars($post->body);
 
 		return view('post/edit', ['post' => $post]);
 	}

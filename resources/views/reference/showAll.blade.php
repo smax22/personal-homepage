@@ -9,7 +9,7 @@
 			</div>
 			@foreach($references as $reference)
 			<div class="admin-reference">
-				<h3>{{ $reference->title }}</h3>
+				<h4>{{ $reference->title }}</h4>
 				<a href="{{ route('reference.edit', ['referenceId' => $reference->id]) }}">Edit</a>
 				<a href="{{ route('reference.delete', ['referenceId' => $reference->id]) }}">Delete</a>
 				<h5>{{ $reference->customer }}, {{ $reference->created_at }}</h5>

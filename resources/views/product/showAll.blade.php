@@ -9,7 +9,7 @@
 			</div>
 			@foreach($products as $product)
 			<div class="admin-product">
-				<h3>{{ $product->title }}</h3>
+				<h4>{{ $product->title }}</h4>
 				<a href="{{ route('product.edit', ['productId' => $product->id]) }}">Edit</a>
 				<a href="{{ route('product.delete', ['productId' => $product->id]) }}">Delete</a>
 				<h5>{{ $product->created_at }}</h5>

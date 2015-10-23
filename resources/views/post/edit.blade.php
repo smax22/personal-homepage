@@ -40,4 +40,8 @@
 			</form>
 		</div>
 	</div>
+	<script type="text/javascript" src="{{ URL::asset('src/vendor/ckeditor/ckeditor.js') }}"></script>
+		<script>
+                CKEDITOR.replace( 'content' );
+        </script>
 @endsection

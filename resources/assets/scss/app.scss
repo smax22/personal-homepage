@@ -5,6 +5,10 @@ $secondaryColor: #AF2121;
 $gray: #9e9c9c;
 $lightGray: #f4f4f4;
 
+body {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
 a:link, a:visited, a:active {
 	color: $primaryColor;
 	text-decoration: none;
@@ -17,27 +21,56 @@ a:hover {
 
 h1 {
 	font-size: 3em;
-	font-family: "Georgia, serif";
 }
 
 h2 {
 	font-size: 2.5em;
-	font-family: "Georgia, serif";
 }
 
 h3 {
 	font-size: 2em;
-	font-family: "Georgia, serif";
+}
+
+h4 {
+	font-size: 1.75em;
+}
+
+h5 {
+	font-size: 1.5em;
+}
+
+h6 {
+	font-size: 1.25em;
+}
+
+pre {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	margin: 0;
+	white-space: nowrap;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	-webkit-overflow-scroll: touch;
+}
+
+.hljs-tag {
+	white-space: nowrap;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	-webkit-overflow-scroll: touch;
 }
 
 header {
 	text-align: center;
 	padding: 0.5em 0;
 	line-height: 90px;
+	margin-bottom: 3em;
 
 	.logo {
 		float: left;
 		width: 25%;
+		padding: 1em 0;
 		// text-align: left;
 		// color: $secondaryColor;
 		// font-size: 1.2em;
@@ -48,7 +81,7 @@ header {
 		// }
 
 		img {
-			width: 100%;
+			width: 80%;
 			float: left;
 		}
 	}
@@ -58,6 +91,7 @@ header {
 		display: inline-block;
 		text-align: right;
 		padding: 0.5em 0;
+		font-size: 1.25em;
 
 		@include tablet {
 			width: 100%;
@@ -125,13 +159,11 @@ header {
 }
 
 .blog-post {
-	font-family: "Georgia, serif";
 	text-align: center;
 	margin-bottom: 16px;
 
 	h1 {
 		font-size: 2.4em;
-		font-weight: bold;
 	}
 
 	h6 {
@@ -139,10 +171,15 @@ header {
 		font-size: 1.1em;
 	}
 
+	.author {
+		color: $primaryColor;
+	}
+
 	.body {
 		font-size: 1.2em;
 		text-align: left;
 		margin-bottom: 1em;
+		text-align: left;
 	}
 
 	.divider {

@@ -7,7 +7,7 @@
 			<article class="blog-post row">
 				<div class="col-lg-8 col-lg-offset-2">
 					<h1>{{ $post->title }}</h1>
-					<h6 class="info">{{ $post->author }}, {{ $post->loc_date }}</h6>
+					<h6 class="info"><span class="author">{{ $post->author }}</span>, {{ $post->loc_date }}</h6>
 					<hr class="divider">
 					<div class="body">
 						{!! $post->body !!}

@@ -3,7 +3,7 @@
         <div class="col-lg-8 col-lg-offset-2">
             <div class="logo">
                 <div class="clearfix"></div>
-                <img src="src/images/upscope-main-logo.svg"></img>
+                <img src="{{ URL::asset('src/images/upscope-main-logo.sv') }}g"></img>
             </div>
             {{-- <div class="logo visible-lg">Maximilian Schwarzmüller Webservices</div> 
             <div class="logo hidden-lg">M. Schwarzmüller Webservices</div>  --}}

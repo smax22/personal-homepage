@@ -5,7 +5,7 @@
 			<h3 class="title">{{ $post->title }}</h3>
 			<h5 class="author">{{ $post->author }}, {{ $post->created_at }}</h5>
 			<hr class="divider">
-			<p class="body">{{ $post->body }}</p>
+			<div class="body">{!! $post->body !!}</div>
 			@include('partials.social_sharing')
 			<hr class="divider-large">
 		</div>
