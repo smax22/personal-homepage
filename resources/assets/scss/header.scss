@@ -1,0 +1,151 @@
+@import "main";
+
+
+header {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #979797;
+  box-shadow: 0px 1px 1px #979797;
+}
+
+.opener {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: center;
+  background-color: $primaryColor;
+
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 24px;
+  }
+
+  p {
+    margin: 0;
+    margin-top: 8px;
+    // fallback for IE
+    font-size: 40px;
+    color: $contrastColor;
+  }
+
+  .quicklinks {
+    display: inline-block;
+    width: 180px;
+    width: 18vmax;
+    border: 1px solid $contrastColor;
+    padding: 8px;
+    margin: 1vw 2vw 1.5vw 2vw;
+    // fallback for IE
+    font-size: 18px;
+    color: $contrastColor;
+    transition: 0.2s background-color;
+  }
+
+  .quicklinks:hover {
+
+    color: $primaryColor;
+    background-color: $contrastColor;
+  }
+}
+
+
+.top-navigation {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: center;
+
+  @include tablet {
+    width: 75%;
+  }
+
+  @include desktop {
+    width: 60%;
+  }
+
+  a {
+    color: $primaryColor;
+  }
+}
+
+.top-navigation ul {
+  line-height: 75px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.top-navigation a {
+  padding: 8px;
+}
+
+.top-navigation li {
+  font-size: 18px;
+  padding: 0;
+  margin: 0 8px;
+  display: inline-block;
+
+  @include phone {
+    display: block;
+  }
+}
+
+.top-navigation .active a {
+  background-color: $primaryColor;
+  color: $contrastColor;
+  border-radius: 4px;
+}
+
+.top-navigation a:hover {
+  background-color: $primaryColor;
+  color: $contrastColor;
+  border-radius: 4px;
+}
+
+.top-navigation .collapsed {
+   font-size: 18px;
+   border: 1px solid $primaryColor;
+   border-radius: 4px;
+   margin: auto;
+   margin-top: 16px;
+   width: 120px;
+   padding: 8px;
+   display: none;
+
+   @include phone {
+     display: block;
+     margin-bottom: 16px;
+   }
+ }
+
+.top-navigation .collapsed:hover {
+  background-color: $primaryColor;
+
+  a {
+    color: $contrastColor
+  }
+}
+
+.top-navigation .navigation-elements {
+  display: block;
+  @include phone {
+    display: none;
+  }
+}
+
+.top-navigation .navigation-elements-phone {
+  display: none;
+
+  @include phone {
+    display: block;
+  }
+}
+
+.top-navigation .navigation-elements-collapsed {
+  display: none;
+}

@@ -1,0 +1,124 @@
+@import "mixins/media-queries";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$primaryColor: #265EB6;
+$secondaryColor: #E8F1FF;
+$highlightColor: #9eb3d3;
+$contrastColor: #fff;
+$lightGray: #eee;
+$darkGray: #aaa;
+
+body {
+  font-family: 'Roboto', sans;
+  font-size: 14px;
+}
+
+a:link,
+a:active {
+  color: $primaryColor;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $highlightColor;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 36px;
+  color: $primaryColor;
+}
+
+h2 {
+  font-size: 32px;
+  color: $primaryColor;
+}
+
+h3 {
+  font-size: 28px;
+  color: $primaryColor;
+}
+
+h4 {
+  font-size: 24px;
+  color: $primaryColor;
+}
+
+h5 {
+  font-size: 20px;
+  color: $primaryColor;
+}
+
+h6 {
+  font-size: 16px;
+  color: $primaryColor;
+}
+
+.btn-std {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid $primaryColor;
+  border-radius: 4px;
+  background-color: $secondaryColor;
+  transition: 0.2s background-color;
+}
+
+.btn-alt {
+  margin: 0;
+  padding: 4px;
+  border: 1px solid $primaryColor;
+  background-color: $primaryColor;
+  color: $contrastColor !important;
+  vertical-align: middle;
+}
+
+.btn-std:hover {
+  background-color: $primaryColor;
+  color: $contrastColor;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: auto;
+  border: 1px solid $primaryColor;
+  font-size: 14px;
+}
+
+.social-icons {
+  span {
+    margin: 0 8px;
+  }
+
+  a:link,
+  a:active,
+  :hover {
+    color: $primaryColor;
+  }
+}
+
+.quote {
+  font-size: 20px;
+  font-style: italic;
+  color: $darkGray;
+  padding-left: 16px;
+  border-left: 4px solid $primaryColor;
+}
+
+.highlight {
+  color: $primaryColor;
+  font-weight: bold ;
+}
+
+.pagination {
+  margin: auto;
+  margin-bottom: 32px;
+  text-align: center;
+  display: block;
+}
+
+
+
+
+
+

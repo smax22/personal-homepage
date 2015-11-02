@@ -1,0 +1,35 @@
+@import "main";
+
+.quick-contact {
+  border: 2px solid $primaryColor;
+  padding: 0;
+  text-align: center;
+
+  span {
+    color: $primaryColor;
+  }
+
+  .checkbox {
+    display: inline-block;
+  }
+
+  .btn-alt {
+    margin-left: 8px;
+  }
+}
+
+.service {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border: 1px solid $primaryColor;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.row:first-child {
+  margin-top: 32px;
+}
+
+.row:last-child {
+  margin-bottom: 32px;
+}

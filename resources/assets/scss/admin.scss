@@ -1,0 +1,38 @@
+@import "main";
+
+section.admin-section {
+  background-color: $lightGray;
+  border: 1px solid $darkGray;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
+.admin-panel {
+  margin-top: 0 !important;
+}
+
+.sidebar {
+  background-color: $secondaryColor;
+  height: 100vh;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    line-height: 28px;
+    margin: 8px -15px;
+    padding: 0 15px;
+
+  }
+
+  .active {
+    background-color: $primaryColor;
+
+    a {
+      color: $contrastColor;
+    }
+  }
+}
