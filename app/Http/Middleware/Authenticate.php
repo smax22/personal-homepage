@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Contracts\UserRepositoryInterface;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
@@ -20,9 +21,9 @@ class Authenticate
      * @param  Guard  $auth
      * @return void
      */
-    public function __construct(Guard $auth)
+    public function __construct(UserRepositoryInterface $user)
     {
-        $this->auth = $auth;
+        $this->user = $user;
     }
 
     /**
@@ -34,11 +35,11 @@ class Authenticate
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->guest()) {
+        if (!$this->user->isLoggedIn()) {
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest('auth/login');
+                return redirect()->route('admin.login')->with(['info' => 'You are not logged in!']);
             }
         }
 

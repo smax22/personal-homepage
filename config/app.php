@@ -144,7 +144,11 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        App\Providers\UserServiceProvider::class,
+        \App\Providers\PostServiceProvider::class,
+        App\Providers\CommentServiceProvider::class,
+        App\Providers\ContactMessageServiceProvider::class,
+        App\Providers\RouteServiceProvider::class
     ],
 
     /*
