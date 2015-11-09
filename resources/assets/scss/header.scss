@@ -34,8 +34,8 @@ header {
 
   .quicklinks {
     display: inline-block;
-    width: 180px;
-    width: 18vmax;
+    width: 200px;
+    width: 20vmax;
     border: 1px solid $contrastColor;
     padding: 8px;
     margin: 1vw 2vw 1.5vw 2vw;
@@ -59,14 +59,7 @@ header {
   margin: 0 auto;
   padding: 0 15px;
   text-align: center;
-
-  @include tablet {
-    width: 75%;
-  }
-
-  @include desktop {
-    width: 60%;
-  }
+  display: inline-block;
 
   a {
     color: $primaryColor;
@@ -132,7 +125,7 @@ header {
 }
 
 .top-navigation .navigation-elements {
-  display: block;
+  display: inline-block;
   @include phone {
     display: none;
   }

@@ -3,6 +3,7 @@ namespace App\Http\Repositories;
 
 use App\Http\Contracts\PostRepositoryInterface;
 use App\Http\Models\Post;
+use App\Http\Models\Tag;
 
 class PostRepository implements PostRepositoryInterface {
     public function getPost($id)
@@ -12,7 +13,7 @@ class PostRepository implements PostRepositoryInterface {
 
     public function getAllPosts()
     {
-        return Post::all();
+        return Post::orderBy('created_at', 'desc')->get();
     }
 
     public function changePublishState($id, $state)
@@ -28,12 +29,14 @@ class PostRepository implements PostRepositoryInterface {
 
     public function getPostsByTag($tag)
     {
-        // TODO: Implement getPostsByTag() method.
-    }
+        if (!isset($tag)) {
+            return redirect()->route('blog.index');
+        }
 
-    public function getPostsBySearch($search)
-    {
-        // TODO: Implement getPostsBySearch() method.
+        $tag = str_replace('# ', '', $tag);
+
+        $posts = Tag::where('name', $tag)->first()->posts;
+        return $posts;
     }
 
     public function createOrUpdatePost($id, $post_data)
@@ -43,6 +46,8 @@ class PostRepository implements PostRepositoryInterface {
         } else {
             $post = Post::find($id);
         }
+
+        $tags = explode(',', $post_data['tags']);
 
         $post->title = $post_data['title'];
         $post->author = $post_data['author'];
@@ -57,19 +62,33 @@ class PostRepository implements PostRepositoryInterface {
             $post->update();
         }
 
+        $this->attachTagsToPost($post->id, $tags);
+
         return true;
     }
 
     public function deletePost($id)
     {
         $post = Post::find($id);
+        $post->tags()->detach();
         $post->delete();
         return true;
     }
 
     public function relatePosts($source_post_id, $target_post_id)
     {
-        // TODO: Implement relatePosts() method.
+        $source_post = Post::find($source_post_id);
+        $target_post = Post::find($target_post_id);
+
+        $source_post->related_posts()->attach($target_post);
+    }
+
+    public function unrelatePosts($source_post_id, $target_post_id)
+    {
+        $source_post = Post::find($source_post_id);
+        $target_post = Post::find($target_post_id);
+
+        $source_post->related_posts()->detach($target_post);
     }
 
     public function sharePost($id)
@@ -79,7 +98,11 @@ class PostRepository implements PostRepositoryInterface {
 
     public function attachTagsToPost($id, $tags)
     {
-        // TODO: Implement attachTagsToPost() method.
+        $post = Post::find($id);
+        foreach ($tags as $tag) {
+            $tag = Tag::where('name', $tag)->first();
+            $post->tags()->save($tag);
+        }
     }
 
 }

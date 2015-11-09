@@ -27,6 +27,10 @@
                     <input class="form-control" type="text" id="author" name="author" value="{{ Request::old('author') ? Request::old('author') : (isset($post) ? $post->author : '') }}">
                 </div>
                 <div class="form-group">
+                    <label for="tags">Tags</label>
+                    <input class="form-control" type="text" id="tags" name="tags" value="{{ Request::old('tags') ? Request::old('tags') : (isset($post) ? $post->tags : '') }}">
+                </div>
+                <div class="form-group">
                     <label for="body">Body</label>
                     <textarea class="form-control" type="text" id="body" name="body" rows="12">{{ Request::old('body') ? Request::old('body') : (isset($post) ? $post->body : '') }}</textarea>
                 </div>
@@ -50,5 +54,7 @@
             </form>
         </div>
     </div>
-
+    <script>
+        CKEDITOR.replace('body');
+    </script>
 @endsection

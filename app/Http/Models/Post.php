@@ -15,4 +15,8 @@ class Post extends Model
     public function tags() {
         return $this->morphToMany('App\Http\Models\Tag', 'taggable');
     }
+
+    public function related_posts() {
+        return $this->belongsToMany('App\Http\Models\Post', 'related_posts', 'source_post_id', 'target_post_id');
+    }
 }

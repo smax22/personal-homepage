@@ -19,6 +19,7 @@ class CreateContactMessagesTable extends Migration
             $table->string('mail');
             $table->string('subject');
             $table->text('body');
+            $table->boolean('read');
         });
     }
 

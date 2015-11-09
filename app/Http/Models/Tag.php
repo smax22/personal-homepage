@@ -4,7 +4,7 @@ namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tagable extends Model
+class Tag extends Model
 {
     protected $fillable = ['name'];
 

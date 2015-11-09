@@ -16,6 +16,7 @@ class CreateTagTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
+            $table->boolean('show_as_filter');
         });
     }
 

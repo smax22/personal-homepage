@@ -4,9 +4,8 @@
   margin-bottom: 32px;
 
   h1 {
-    @include phone {
-      text-align: center;
-    }
+    text-align: center;
+    font-weight: bold;
   }
 }
 
@@ -20,22 +19,22 @@
   }
 }
 
-.blog-post:nth-child(odd) {
-  background-color: $lightGray;
-}
-
 .filter-bar {
   line-height: 30px;
   margin-top: 16px;
   margin-bottom: 16px;
 
   .tags {
-    text-align: left;
+    text-align: center;
     color: $primaryColor;
     font-size: 14px;
 
     @include phone {
       text-align: center;
+    }
+
+    a {
+      padding: 0 16px;
     }
   }
 
@@ -99,6 +98,16 @@
 
   @include phone {
     text-align: center;
+  }
+
+  a:link,
+  a:active,
+  a:visited {
+    color: $darkGray;
+  }
+
+  a:hover {
+    color: $primaryColor;
   }
 }
 

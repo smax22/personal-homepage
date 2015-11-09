@@ -12,17 +12,17 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 details">
                 <div class="detail">
-                    <h3>The Jerk Shop - High-Quality Food Producer and Event Place</h3>
-                    <div class="quote">"Quote"</div>
-                    <h6>Services delivered</h6>
+                    <h3>{{ trans('ui_text.track.jerkshop.title') }}</h3>
+                    <div class="quote">"{{ trans('ui_text.track.jerkshop.quote') }}"</div>
+                    <h6>{{ trans('ui_text.track.jerkshop.services-headline') }}</h6>
                     <div>
                         <ul>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                            <li>Item 4</li>
+                            <li>{{ trans('ui_text.track.jerkshop.services-1') }}</li>
+                            <li>{{ trans('ui_text.track.jerkshop.services-2') }}</li>
+                            <li>{{ trans('ui_text.track.jerkshop.services-3') }}</li>
+                            <li>{{ trans('ui_text.track.jerkshop.services-4') }}</li>
                         </ul></div>
-                    <span class="highlight">Timeframe: 8 weeks</span>
+                    <span class="highlight">{{ trans('ui_text.track.jerkshop.timeframe', ['time' => '8']) }}</span>
                 </div>
                 <div class="detail">
                     The detail section - #2

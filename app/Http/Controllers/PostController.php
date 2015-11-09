@@ -18,6 +18,11 @@ class PostController extends Controller {
         return view('admin.posts');
     }
 
+    public function getViewPost($post_id) {
+        $post = $this->post->getPost($post_id);
+        return view('admin.view_post', ['post' => $post]);
+    }
+
     public function getCreatePost() {
         return view('admin.edit');
     }
@@ -37,6 +42,7 @@ class PostController extends Controller {
             'body' => $request['body'],
             'excerpt' => $request['excerpt'],
             'allow_comments' => isset($request['allow_comments']) ? $request['allow_comments'] : false,
+            'tags' => $request['tags']
         ];
 
         // Create in database
@@ -55,6 +61,12 @@ class PostController extends Controller {
 
     public function getEditPost($post_id) {
         $post = $this->post->getPost($post_id);
+        $tags = [];
+        foreach ($post->tags as $tag) {
+            array_push($tags, $tag->name);
+        }
+        $tags = implode(',', $tags);
+        $post->tags = $tags;
         return view('admin.edit', ['post' => $post]);
     }
     public function postUpdatePost(Request $request) {
@@ -82,6 +94,7 @@ class PostController extends Controller {
             'body' => $request['body'],
             'excerpt' => $request['excerpt'],
             'allow_comments' => isset($request['allow_comments']) ? $request['allow_comments'] : false,
+            'tags' => $request['tags']
         ];
 
         // Create in database
@@ -91,6 +104,22 @@ class PostController extends Controller {
 
         // Redirect
         return redirect()->route('admin.dashboard')->with(['success' => 'Successfully updated post!']);
+    }
+
+    public function postAddRelationship(Request $request) {
+        $this->validate($request, [
+           'source-post' => 'required',
+           'target-post' => 'required',
+        ]);
+        $source_post_id = explode(' | ', $request['source-post'])[0];
+        $target_post_id = explode(' | ', $request['target-post'])[0];
+        $this->post->relatePosts($source_post_id, $target_post_id);
+        return redirect()->route('post.index')->with(['success' => 'Relationship added!']);
+    }
+
+    public function getRemoveRelationship($source_post_id, $target_post_id) {
+        $this->post->unrelatePosts($source_post_id, $target_post_id);
+        return redirect()->back()->with(['success' => 'Relationship removed!']);
     }
 
     public function getDeletePost($post_id) {

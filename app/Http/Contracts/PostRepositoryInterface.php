@@ -8,13 +8,13 @@ interface PostRepositoryInterface {
 
     public function getPostsByTag($tag);
 
-    public function getPostsBySearch($search);
-
     public function createOrUpdatePost($id, $post_data);
 
     public function deletePost($id);
 
     public function relatePosts($source_post_id, $target_post_id);
+
+    public function unrelatePosts($source_post_id, $target_post_id);
 
     public function sharePost($id);
 
