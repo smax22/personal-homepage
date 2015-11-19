@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="235px" height="136px" viewBox="0 0 235 136" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Group" sketch:type="MSLayerGroup" transform="translate(-8.000000, -4.000000)" font-weight="bold" font-family="Helvetica Neue">
+            <text id="Angular" sketch:type="MSTextLayer" font-size="39.6825397" fill="#265EB6">
+                <tspan x="44.973545" y="89.1012146">Angular</tspan>
+            </text>
+            <text id="Express" sketch:type="MSTextLayer" transform="translate(205.687831, 64.018219) rotate(-90.000000) translate(-205.687831, -64.018219) " font-size="31.7460317" fill="#59BA99">
+                <tspan x="144.84127" y="74.8385628">Express</tspan>
+            </text>
+            <text id="Meteor" sketch:type="MSTextLayer" font-size="26.4550265" fill="#000000">
+                <tspan x="99.2063492" y="45.4838057">Meteor</tspan>
+            </text>
+            <text id="React" sketch:type="MSTextLayer" transform="translate(22.486772, 89.764676) rotate(-90.000000) translate(-22.486772, -89.764676) " font-size="37.037037" fill="#59BA99">
+                <tspan x="-29.7619048" y="102.105769">React</tspan>
+            </text>
+            <text id="Backbone" sketch:type="MSTextLayer" font-size="26.4550265" fill="#000000">
+                <tspan x="44.973545" y="123.419028">Backbone</tspan>
+            </text>
+            <text id="Ember" sketch:type="MSTextLayer" transform="translate(234.788360, 49.405364) rotate(-90.000000) translate(-234.788360, -49.405364) " font-size="23.8095238" fill="#265EB6">
+                <tspan x="197.089947" y="56.4008097">Ember</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 $primaryColor: #265EB6;
-$secondaryColor: #E8F1FF;
+$secondaryColor: #45ba99;
 $highlightColor: #9eb3d3;
 $contrastColor: #fff;
 $lightGray: #f7f7f7;
@@ -11,11 +11,7 @@ $darkGray: #aaa;
 body {
   //font-family: 'Roboto', sans;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-}
-
-#main {
-  background: #D0D0D0;
+  font-size: 16px;
 }
 
 a:link,
@@ -63,9 +59,11 @@ h6 {
 .btn-std {
   display: inline-block;
   padding: 8px 16px;
-  border: 1px solid $primaryColor;
-  border-radius: 4px;
-  background-color: $secondaryColor;
+  border: 2px solid $primaryColor;
+  //border-radius: 4px;
+  background-color: #FFF;
+  color: $primaryColor;
+  font-weight: bold;
   transition: 0.2s background-color;
 }
 
@@ -111,8 +109,8 @@ textarea {
   font-size: 20px;
   font-style: italic;
   color: $darkGray;
-  padding-left: 16px;
-  border-left: 4px solid $primaryColor;
+  //padding-left: 16px;
+  //border-left: 4px solid $primaryColor;
 }
 
 .highlight {

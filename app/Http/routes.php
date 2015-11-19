@@ -11,19 +11,39 @@
 |
 */
 
+// Glide system
+Route::get('glide/{path}', function($path) {
+    $server = \League\Glide\ServerFactory::create([
+        'source' => app('filesystem')->disk('public')->getDriver(),
+        'cache' => storage_path('glide')
+    ]);
+    return $server->getImageResponse($path, Input::query());
+})->where('path', '.+');
+
+// Change locale
+Route::get('/locale/{locale}', ['as' => 'changelocale', function(\Illuminate\Http\Request $request, $locale) {
+    $request->session()->put('custom_locale', $locale);
+    App::setLocale($request->session()->get('custom_locale'));
+    return redirect()->back();
+}]);
+
 Route::get('/', ['as' => 'blog.index', function (\App\Http\Contracts\PostRepositoryInterface $post_repository) {
-    return view('blog.index', ['posts' => $post_repository->getAllPosts()]);
+    return view('blog.index', ['posts' => $post_repository->getAllPosts(true)]);
 }]);
 
 Route::get('/posts/{tag}', ['as' => 'blog.by_tag', function (\App\Http\Contracts\PostRepositoryInterface $post_repository, $tag) {
-    return view('blog.index', ['posts' => $post_repository->getPostsByTag($tag)]);
+    return view('blog.index', ['posts' => $post_repository->getPostsByTag($tag, true)]);
 }]);
 
 Route::get('/posts/{post_id}/{seo_url}', ['as' => 'blog.post', function(\App\Http\Contracts\PostRepositoryInterface $post_repository, $post_id) {
-    return view('blog.single', ['post' => $post_repository->getPost($post_id)]);
+    $post = $post_repository->getPost($post_id);
+    if (!$post->published) {
+        return redirect()->back();
+    }
+    return view('blog.single', ['post' => $post]);
 }]);
 
-Route::get('/web-development', ['as' => 'web_dev.index', function() {
+Route::get('/services', ['as' => 'web_dev.index', function() {
     return view('webdev.index');
 }]);
 
@@ -185,6 +205,13 @@ Route::get('/admin/contact/read/{contact_message_id}', [
 Route::post('/contact/send/', [
     'uses' => 'ContactMessageController@postSendContactMessage',
     'as' => 'contact.send_message',
+]);
+
+/* Image uploading & browsing */
+Route::post('/admin/image/upload', [
+   'uses' => 'UploadController@postUploadImage',
+    'as' => 'image.upload',
+    'middleware' => ['auth']
 ]);
 
 /* Impressum */

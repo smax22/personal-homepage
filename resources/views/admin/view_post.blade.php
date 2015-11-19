@@ -10,7 +10,7 @@
             <span>{{ count($post->comments) }} Comments</span> |
             [<a href="{{ route('post.edit', ['post_id' => $post->id]) }}">Edit</a>] |
             [<a href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a>]
-            <p>{{ $post->body }}</p>
+            <p>{!! $post->body !!}</p>
         </div>
     </article>
 @endsection

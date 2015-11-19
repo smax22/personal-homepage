@@ -17,22 +17,22 @@
                 <article class="row blog-post">
                     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                         @include('include.blog_post')
-                        <div class="body">{{ $post->excerpt }}
+                        <div class="excerpt">{{ $post->excerpt }}
                         </div>
                         <div class="read-more">
-                            <a class="btn-std" href="{{ route('blog.post', ['post_id' => $post->id, 'seo_url' => str_replace(' ', '-', $post->title)]) }}">Read more</a>
+                            <a class="btn-std" href="{{ route('blog.post', ['post_id' => $post->id, 'seo_url' => str_replace(' ', '-', $post->title)]) }}">{{ trans('ui_text.blog.read-more') }}</a>
                         </div>
                     </div>
                 </article>
             @endforeach
         </section>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                <div class="pagination">
-                    Pagination links go here
-                </div>
-            </div>
-        </div>
+        {{--<div class="row">--}}
+            {{--<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">--}}
+                {{--<div class="pagination">--}}
+                    {{--Pagination links go here--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
     </div>
 @endsection

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['title', 'author', 'body', 'excerpt', 'allow_comments', 'published'];
+    protected $fillable = ['title', 'author', 'body', 'excerpt', 'allow_comments', 'published', 'main_image'];
 
     public function comments() {
         return $this->morphMany('App\Http\Models\Comment', 'commentable');

@@ -149,7 +149,11 @@ return [
         App\Providers\TagServiceProvider::class,
         App\Providers\CommentServiceProvider::class,
         App\Providers\ContactMessageServiceProvider::class,
-        App\Providers\RouteServiceProvider::class
+        App\Providers\LocalizedTextsServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Barryvdh\Elfinder\ElfinderServiceProvider::class
     ],
 
     /*
@@ -198,6 +202,9 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Date'      => Jenssegers\Date\Date::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class
 
     ],
 

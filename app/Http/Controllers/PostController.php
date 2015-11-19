@@ -41,8 +41,9 @@ class PostController extends Controller {
             'author' => $request['author'],
             'body' => $request['body'],
             'excerpt' => $request['excerpt'],
-            'allow_comments' => isset($request['allow_comments']) ? $request['allow_comments'] : false,
-            'tags' => $request['tags']
+            'allow_comments' => isset($request['allow_comments']) ? 1 : 0,
+            'tags' => $request['tags'],
+            'main_image' => $request['main_image']
         ];
 
         // Create in database
@@ -78,7 +79,7 @@ class PostController extends Controller {
         // Validate
         if ($request['title'] !== $post->title) {
             $this->validate($request, [
-                'title' => 'required|max:140|unique',
+                'title' => 'required|max:140|unique:posts',
             ]);
         }
 
@@ -93,8 +94,9 @@ class PostController extends Controller {
             'author' => $request['author'],
             'body' => $request['body'],
             'excerpt' => $request['excerpt'],
-            'allow_comments' => isset($request['allow_comments']) ? $request['allow_comments'] : false,
-            'tags' => $request['tags']
+            'allow_comments' => isset($request['allow_comments']) ? 1 : 0,
+            'tags' => $request['tags'],
+            'main_image' => $request['main_image']
         ];
 
         // Create in database

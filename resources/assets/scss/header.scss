@@ -8,28 +8,42 @@ header {
   height: auto;
   border-bottom: 1px solid #979797;
   box-shadow: 0px 1px 1px #979797;
+  display: inline-block;
 }
 
 .opener {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 200px;
   margin: 0 auto;
   padding: 0 15px;
+  padding-top: 48px;
   text-align: center;
-  background-color: $primaryColor;
+  //background-color: $primaryColor;
+  background-image: url("../images/test-logo.png");
+  background-repeat:no-repeat;
+  //background-size:contain;
+  background-position:center;
 
   .logo {
     margin-left: auto;
     margin-right: auto;
-    padding-top: 24px;
+    padding-top: 12px;
   }
 
   p {
     margin: 0;
-    margin-top: 8px;
+    margin-bottom: 16px;
     // fallback for IE
-    font-size: 40px;
+    font-size: 32px;
     color: $contrastColor;
+
+    @include tablet {
+      font-size: 28px;
+    }
+
+    @include phone {
+      font-size: 24px;
+    }
   }
 
   .quicklinks {
@@ -43,6 +57,14 @@ header {
     font-size: 18px;
     color: $contrastColor;
     transition: 0.2s background-color;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include phone {
+      font-size: 14px;
+    }
   }
 
   .quicklinks:hover {
@@ -67,7 +89,7 @@ header {
 }
 
 .top-navigation ul {
-  line-height: 75px;
+  line-height: 50px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -141,4 +163,9 @@ header {
 
 .top-navigation .navigation-elements-collapsed {
   display: none;
+}
+
+.change-locale {
+  display: block;
+  text-align: center;
 }

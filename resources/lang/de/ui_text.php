@@ -1,18 +1,19 @@
 <?php
 
 return [
-    'opener.text' => 'Passionate Coder. Entrepreneur. Instructor.',
+    'opener.text' => 'Begeisterter Programmierer, Coach und Unternehmer',
     'opener.hire' => 'F&uuml;r Projekt engagieren',
     'opener.tutorials' => 'Tutorials erforschen',
-    'nav.blog' => 'Blog &amp; Tutorials',
+    'nav.blog' => 'Blog',
     'nav.services' => 'Services',
     'nav.track' => 'Erfahrung',
     'nav.contact' => 'Kontakt',
     'nav.impressum' => 'Impressum',
-    'services.consulting' => 'Analyse &amp; Beratung',
-    'services.consulting.text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, doloremque eius ipsum iste magni molestias nesciunt non officia omnis, quo quos rem reprehenderit saepe ut voluptate. Atque cupiditate fuga fugit.',
-    'services.development' => 'Entwicklung &amp; Implementierung',
-    'services.development.text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, doloremque eius ipsum iste magni molestias nesciunt non officia omnis, quo quos rem reprehenderit saepe ut voluptate. Atque cupiditate fuga fugit.',
+    'services.analysis-heading' => 'Analyse',
+    'services.frontend-heading' => 'Frontend / Design',
+    'services.backend-heading' => 'Backend / Server-seitig',
+    'services.engage' => 'Konnte ich Ihr Interesse an meinen Dienstleistungen wecken? Haben Sie weitere Fragen?',
+    'services.btn-contact' => 'Kontaktieren Sie mich!',
     'track.jerkshop.title' => 'The Jerk Shop - High-Quality Food Producer and Event Place',
     'track.jerkshop.quote' => 'Quote',
     'track.jerkshop.services-headline' => 'Services delivered',
@@ -28,5 +29,6 @@ return [
     'contact.message' => 'Nachricht',
     'contact.submit' => 'Abschicken',
     'contact.success.message-sent' => 'Nachricht erfolgreich gesendet!',
+    'contact.alert.validation' => 'Bitte alle benötigten Felder ausfüllen.',
     'blog.read-more' => 'Weiterlesen',
 ];

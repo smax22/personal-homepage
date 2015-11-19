@@ -6,7 +6,13 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.1.*"
+        "laravel/framework": "5.1.*",
+        "jenssegers/date": "^3.0",
+        "laravelcollective/html": "5.1.*",
+        "barryvdh/laravel-elfinder": "^0.3.4",
+        "barryvdh/elfinder-flysystem-driver": "^0.1.1",
+        "league/glide": "^0.3.5",
+        "guzzlehttp/guzzle": "^6.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

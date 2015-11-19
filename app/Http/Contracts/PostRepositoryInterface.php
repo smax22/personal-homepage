@@ -4,9 +4,9 @@ namespace App\Http\Contracts;
 interface PostRepositoryInterface {
     public function getPost($id);
 
-    public function getAllPosts();
+    public function getAllPosts($filter_only_show_published = false);
 
-    public function getPostsByTag($tag);
+    public function getPostsByTag($tag, $filter_only_show_published = false);
 
     public function createOrUpdatePost($id, $post_data);
 

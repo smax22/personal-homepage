@@ -1,18 +1,20 @@
 <?php
 
 return [
-    'opener.text' => 'Passionate Coder. Entrepreneur. Instructor.',
+    'opener.text' => 'Passionate Coder, Instructor and Entrepreneur.',
     'opener.hire' => 'Hire for Project',
     'opener.tutorials' => 'Dive into Tutorials',
-    'nav.blog' => 'Blog &amp; Tutorials',
+    'nav.blog' => 'Blog',
     'nav.services' => 'Services',
     'nav.track' => 'Experience',
     'nav.contact' => 'Contact',
     'nav.impressum' => 'Impressum',
-    'services.consulting' => 'Analysis &amp; Consulting',
-    'services.consulting.text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, doloremque eius ipsum iste magni molestias nesciunt non officia omnis, quo quos rem reprehenderit saepe ut voluptate. Atque cupiditate fuga fugit.',
+    'services.analysis-heading' => 'Analysis',
+    'services.frontend-heading' => 'Frontend / Design',
+    'services.backend-heading' => 'Backend / Server-side',
     'services.development' => 'Development &amp; Implementation',
-    'services.development.text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, doloremque eius ipsum iste magni molestias nesciunt non officia omnis, quo quos rem reprehenderit saepe ut voluptate. Atque cupiditate fuga fugit.',
+    'services.engage' => 'Are you interested in any or all of the described services? Do you have further questions?',
+    'services.btn-contact' => 'Contact me!',
     'track.jerkshop.title' => 'The Jerk Shop - High-Quality Food Producer and Event Place',
     'track.jerkshop.quote' => 'Quote',
     'track.jerkshop.services-headline' => 'Services delivered',
@@ -28,5 +30,6 @@ return [
     'contact.message' => 'Message',
     'contact.submit' => 'Submit',
     'contact.success.message-sent' => 'Message successfully sent!',
+    'contact.alert.validation' => 'Please fill out all required fields.',
     'blog.read-more' => 'Read more',
 ];

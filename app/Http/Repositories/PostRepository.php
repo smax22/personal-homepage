@@ -5,14 +5,18 @@ use App\Http\Contracts\PostRepositoryInterface;
 use App\Http\Models\Post;
 use App\Http\Models\Tag;
 
-class PostRepository implements PostRepositoryInterface {
+class PostRepository implements PostRepositoryInterface
+{
     public function getPost($id)
     {
         return Post::find($id);
     }
 
-    public function getAllPosts()
+    public function getAllPosts($filter_only_show_published = false)
     {
+        if ($filter_only_show_published) {
+            return Post::where('published', 1)->orderBy('created_at', 'desc')->get();
+        }
         return Post::orderBy('created_at', 'desc')->get();
     }
 
@@ -27,15 +31,19 @@ class PostRepository implements PostRepositoryInterface {
         return true;
     }
 
-    public function getPostsByTag($tag)
+    public function getPostsByTag($tag, $filter_only_show_published = false)
     {
         if (!isset($tag)) {
             return redirect()->route('blog.index');
         }
 
+        if ($filter_only_show_published) {
+            return Tag::where('name', $tag)->first()->posts()->where('published', 1)->orderBy('created_at', 'desc')->get();
+        }
+
         $tag = str_replace('# ', '', $tag);
 
-        $posts = Tag::where('name', $tag)->first()->posts;
+        $posts = Tag::where('name', $tag)->first()->posts()->orderBy('created_at', 'desc')->get();
         return $posts;
     }
 
@@ -43,6 +51,7 @@ class PostRepository implements PostRepositoryInterface {
     {
         if (is_null($id)) {
             $post = new Post();
+            $post->published = false;
         } else {
             $post = Post::find($id);
         }
@@ -54,7 +63,7 @@ class PostRepository implements PostRepositoryInterface {
         $post->body = $post_data['body'];
         $post->excerpt = $post_data['excerpt'];
         $post->allow_comments = $post_data['allow_comments'];
-        $post->published = false;
+        $post->main_image = $post_data['main_image'];
 
         if (is_null($id)) {
             $post->save();
@@ -99,9 +108,10 @@ class PostRepository implements PostRepositoryInterface {
     public function attachTagsToPost($id, $tags)
     {
         $post = Post::find($id);
+        $post->tags()->detach();
         foreach ($tags as $tag) {
             $tag = Tag::where('name', $tag)->first();
-            $post->tags()->save($tag);
+            $post->tags()->attach($tag->id);
         }
     }
 

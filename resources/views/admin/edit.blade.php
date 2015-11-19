@@ -1,6 +1,29 @@
 @extends('layouts.master_admin')
-
+@inject('tag_repository','App\Http\Contracts\TagRepositoryInterface')
 @section('content')
+<script type="text/javascript">
+        function elFinderBrowser (field_name, url, type, win) {
+          tinymce.activeEditor.windowManager.open({
+            file: '<?= route('elfinder.tinymce4') ?>',// use an absolute path!
+            title: 'elFinder 2.0',
+            width: 900,
+            height: 450,
+            resizable: 'yes'
+          }, {
+            setUrl: function (url) {
+              win.document.getElementById(field_name).value = url;
+            }
+          });
+          return false;
+        }
+        tinymce.init({
+            plugins: "image code table link",
+            selector: "#body",
+            file_browser_callback : elFinderBrowser,
+            images_upload_url: "elfinder/",
+            relative_urls: false
+        });
+    </script>
     <div class="row">
         <div class="col-xs-12">
             @if(Session::has('failure'))
@@ -18,6 +41,10 @@
                 </section>
             @endif
             <form action="{{ isset($post) ? route('post.update') : route('post.create') }}" method="post">
+                <div class="form-group">
+                    <label for="main_image">Main Image</label>
+                    <input class="form-control" type="text" id="main_image" name="main_image" value="{{ Request::old('main_image') ? Request::old('main_image') : (isset($post) ? $post->main_image : '') }}">
+                </div>
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input class="form-control" type="text" id="title" name="title" value="{{ Request::old('title') ? Request::old('title') : (isset($post) ? $post->title : '') }}">
@@ -54,7 +81,4 @@
             </form>
         </div>
     </div>
-    <script>
-        CKEDITOR.replace('body');
-    </script>
 @endsection

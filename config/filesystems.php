@@ -42,10 +42,14 @@ return [
     */
 
     'disks' => [
+        'public' => [
+            'driver' => 'local',
+            'root'   => base_path(),
+        ],
 
         'local' => [
             'driver' => 'local',
-            'root'   => storage_path('app'),
+            'root'   => base_path() . '/public',
         ],
 
         'ftp' => [

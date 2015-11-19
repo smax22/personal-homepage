@@ -29,7 +29,10 @@ class TagRepository implements TagRepositoryInterface {
 
     public function getAllTags($only_show_as_filter = false)
     {
-        return Tag::where('show_as_filter', $only_show_as_filter)->get();
+        if ($only_show_as_filter) {
+            return Tag::where('show_as_filter', 1)->get();
+        }
+        return Tag::all();
     }
 
 }

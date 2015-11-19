@@ -15,13 +15,6 @@
                     <h3>{{ trans('ui_text.track.jerkshop.title') }}</h3>
                     <div class="quote">"{{ trans('ui_text.track.jerkshop.quote') }}"</div>
                     <h6>{{ trans('ui_text.track.jerkshop.services-headline') }}</h6>
-                    <div>
-                        <ul>
-                            <li>{{ trans('ui_text.track.jerkshop.services-1') }}</li>
-                            <li>{{ trans('ui_text.track.jerkshop.services-2') }}</li>
-                            <li>{{ trans('ui_text.track.jerkshop.services-3') }}</li>
-                            <li>{{ trans('ui_text.track.jerkshop.services-4') }}</li>
-                        </ul></div>
                     <span class="highlight">{{ trans('ui_text.track.jerkshop.timeframe', ['time' => '8']) }}</span>
                 </div>
                 <div class="detail">
